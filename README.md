@@ -2,6 +2,9 @@
 ใช้สำหรับตรวดสอบว่าเขาได้ติดตามผมอยู่หรือเปล่า
 # 1. ติดตั้ง Python และ dependencies
 ```bash
+git clone https://github.com/ygygi67/Roblox-Followes
+```
+```bash
 pkg install python
 ```
 ```bash
