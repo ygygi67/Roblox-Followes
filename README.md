@@ -5,6 +5,9 @@
 git clone https://github.com/ygygi67/Roblox-Followes
 ```
 ```bash
+cd Roblox-Followes
+```
+```bash
 pkg install python
 ```
 ```bash
