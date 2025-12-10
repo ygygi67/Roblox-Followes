@@ -281,26 +281,26 @@ def display_user_status():
             
             print(f" {presence_status.center(50)} ")
             print(border)
-            print(f" 👤 User ID: {user_id:<25} ")
-            print(f" 📝 ชื่อ: {user_info['displayName']} (@{user_info['name']}){' ' * (60 - len(user_info['displayName']) - len(user_info['name']))} ")
+            print(f" 👤 User ID : {user_id:<25} ")
+            print(f" 📝 ชื่อ : {user_info['displayName']} (@{user_info['name']}){' ' * (60 - len(user_info['displayName']) - len(user_info['name']))} ")
             
             # แสดงข้อมูลเกมถ้ากำลังเล่นอยู่
             if user_info["presence"] == 2 and user_info["game_name"]:
                 game_name = user_info["game_name"]
                 if len(game_name) > 60:
                     game_name = game_name[:57] + "..."
-                print(f"| 🎮 กำลังเล่น: {game_name}{' ' * (25 - len(game_name))} |")
+                print(f"| 🎮 กำลังเล่น : {game_name}{' ' * (25 - len(game_name))} |")
             
-            print(f" 👥 เพื่อน: {user_info['friends']:,}{' ' * (25 - len(str(user_info['friends'])))} ")
-            print(f" 📢 ผู้ติดตาม: {user_info['followers']:,}{' ' * (25 - len(str(user_info['followers'])))} ")
-            print(f" ➕ กำลังติดตาม: {user_info['followings']:,}{' ' * (25 - len(str(user_info['followings'])))} ")
+            print(f" 👥 เพื่อน : {user_info['friends']:,}{' ' * (25 - len(str(user_info['friends'])))} ")
+            print(f" 📢 ผู้ติดตาม : {user_info['followers']:,}{' ' * (25 - len(str(user_info['followers'])))} ")
+            print(f" ➕ กำลังติดตาม : {user_info['followings']:,}{' ' * (25 - len(str(user_info['followings'])))} ")
             
             # แสดง Last Online สำหรับคนที่ออฟไลน์
             if user_info["presence"] == 0 and user_info["lastOnline"]:
                 try:
                     last_online = datetime.fromisoformat(user_info["lastOnline"].replace("Z", "+00:00"))
                     last_online_str = last_online.strftime("%d/%m/%Y %H:%M")
-                    print(f" 🕐 ออนไลน์ครั้งล่าสุด: {last_online_str}{' ' * (25 - len(last_online_str))} ")
+                    print(f" 🕐 ออนไลน์ครั้งล่าสุด : {last_online_str}{' ' * (25 - len(last_online_str))} ")
                 except:
                     pass
         else:
@@ -308,7 +308,7 @@ def display_user_status():
             print(border)
             print(f"| 👤 User ID: {user_id:<63} |")
         
-        print(f" ⏰ อัพเดทล่าสุด: {last_update:<59} ")
+        print(f" ⏰ อัพเดทล่าสุด : {last_update:<59} ")
         print(border)
         print()
     
