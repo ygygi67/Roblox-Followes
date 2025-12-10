@@ -7,7 +7,7 @@ from pathlib import Path
 import time
 import os
 
-DEFAULT_TARGET = 3535260140
+DEFAULT_TARGET = 
 WEBHOOK_URL = ""  # ใส่ Discord Webhook URL ตรงนี้
 
 current_threads = []
@@ -413,4 +413,5 @@ if __name__ == "__main__":
         main()
     except Exception as e:
         print(f"\n❌ เกิดข้อผิดพลาด: {e}")
+
         log_to_file(f"CRITICAL ERROR: {str(e)}")
