@@ -9,7 +9,7 @@ from pathlib import Path
 from PIL import Image, ImageTk
 from io import BytesIO
 
-DEFAULT_TARGET = 3535260140
+DEFAULT_TARGET = 
 WEBHOOK_URL = ""  # ใส่ Discord Webhook URL ตรงนี้
 
 current_threads = []
@@ -592,5 +592,6 @@ footer.pack(pady=5)
 
 # สร้างไฟล์ log ถ้ายังไม่มี
 Path(LOG_FILE).touch(exist_ok=True)
+
 
 root.mainloop()
