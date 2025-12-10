@@ -268,7 +268,7 @@ def display_user_status():
         user_info = status_info.get("user_info")
         last_update = status_info.get("last_update", "-")
         
-        border = "+" + "-" * 78 + "+"
+        border = "+" + "-" * 50 + "+"
         print(border)
         
         if user_info:
@@ -279,28 +279,28 @@ def display_user_status():
                 3: "🛠️ อยู่ใน STUDIO"
             }.get(user_info["presence"], "❓ ไม่ทราบ")
             
-            print(f"| {presence_status.center(76)} |")
+            print(f" {presence_status.center(50)} ")
             print(border)
-            print(f"| 👤 User ID: {user_id:<63} |")
-            print(f"| 📝 ชื่อ: {user_info['displayName']} (@{user_info['name']}){' ' * (60 - len(user_info['displayName']) - len(user_info['name']))} |")
+            print(f" 👤 User ID: {user_id:<25} ")
+            print(f" 📝 ชื่อ: {user_info['displayName']} (@{user_info['name']}){' ' * (60 - len(user_info['displayName']) - len(user_info['name']))} ")
             
             # แสดงข้อมูลเกมถ้ากำลังเล่นอยู่
             if user_info["presence"] == 2 and user_info["game_name"]:
                 game_name = user_info["game_name"]
                 if len(game_name) > 60:
                     game_name = game_name[:57] + "..."
-                print(f"| 🎮 กำลังเล่น: {game_name}{' ' * (62 - len(game_name))} |")
+                print(f"| 🎮 กำลังเล่น: {game_name}{' ' * (25 - len(game_name))} |")
             
-            print(f"| 👥 เพื่อน: {user_info['friends']:,}{' ' * (66 - len(str(user_info['friends'])))} |")
-            print(f"| 📢 ผู้ติดตาม: {user_info['followers']:,}{' ' * (63 - len(str(user_info['followers'])))} |")
-            print(f"| ➕ กำลังติดตาม: {user_info['followings']:,}{' ' * (61 - len(str(user_info['followings'])))} |")
+            print(f" 👥 เพื่อน: {user_info['friends']:,}{' ' * (25 - len(str(user_info['friends'])))} ")
+            print(f" 📢 ผู้ติดตาม: {user_info['followers']:,}{' ' * (25 - len(str(user_info['followers'])))} ")
+            print(f" ➕ กำลังติดตาม: {user_info['followings']:,}{' ' * (25 - len(str(user_info['followings'])))} ")
             
             # แสดง Last Online สำหรับคนที่ออฟไลน์
             if user_info["presence"] == 0 and user_info["lastOnline"]:
                 try:
                     last_online = datetime.fromisoformat(user_info["lastOnline"].replace("Z", "+00:00"))
                     last_online_str = last_online.strftime("%d/%m/%Y %H:%M")
-                    print(f"| 🕐 ออนไลน์ครั้งล่าสุด: {last_online_str}{' ' * (50 - len(last_online_str))} |")
+                    print(f" 🕐 ออนไลน์ครั้งล่าสุด: {last_online_str}{' ' * (25 - len(last_online_str))} ")
                 except:
                     pass
         else:
@@ -308,7 +308,7 @@ def display_user_status():
             print(border)
             print(f"| 👤 User ID: {user_id:<63} |")
         
-        print(f"| ⏰ อัพเดทล่าสุด: {last_update:<59} |")
+        print(f" ⏰ อัพเดทล่าสุด: {last_update:<59} ")
         print(border)
         print()
     
@@ -411,9 +411,9 @@ def stop_all_threads():
 def main():
     """ฟังก์ชันหลัก"""
     clear_screen()
-    print("=" * 80)
-    print("📊 Roblox Profile Tracker - Termux Edition".center(80))
-    print("=" * 80)
+    print("=" * 50)
+    print("📊 Roblox Profile Tracker - Termux Edition".center(40))
+    print("=" * 50)
     print()
     print("📝 โปรแกรมนี้จะติดตามสถานะโปรไฟล์ของผู้ใช้ Roblox")
     print("   - สถานะออนไลน์/ออฟไลน์")
